@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  Social media test app
+</h1>
+<h2 class="subtitle">
+  Blogging app made using Flask
+</h2>
+<a href="{{ url_for('main.posts') }}" class="button is-primary">See all posts</a>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base2.html' %}
+
+{% block content %}
+    <h2>{% block title %} {{ post['title'] }} {% endblock %}</h2>
+    <span class="badge badge-primary">Created at: {{ post['created'] }}</span>
+    {% if post['modified'] is not none %}        
+        <span class="badge badge-primary">Modified at: {{ post['modified'] }}</span>
+    {% endif %}
+    <hr>
+    <p>{{ post['content'] }}</p>
+    <hr>
+    {% if post['email'] == curr_email %}
+        <a href="{{ url_for('main.edit', post_id=post['id']) }}">
+            <span class="badge badge-warning">Edit post</span>
+        </a>
+    {% endif %}
+{% endblock %}

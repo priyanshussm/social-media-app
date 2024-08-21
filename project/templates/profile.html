@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  Welcome to blogging {{ user.name }}!
+</h1>
+<ul>
+  <li>
+    User ID: {{ user.id }}
+  </li>
+  <li>
+    Email: {{ user.email }}
+  </li>
+</ul>
+{% endblock %}
+
+<!--add a link to homepage-->

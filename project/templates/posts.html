@@ -1,0 +1,16 @@
+{% extends 'base2.html' %}
+
+{% block content %}
+    <h1>{% block title %} Welcome to FlaskBlog {% endblock %}</h1>
+    {% for post in posts %}
+        <a href="{{ url_for('main.post', post_id=post['id']) }}">
+            <h2>{{ post['title'] }}</h2>
+        </a>
+        <span class="badge badge-info">Created: {{ post['created'] }}</span>
+        {% if post['modified'] is not none %}
+            <span class="badge badge-info">Modified: {{ post['modified'] }}</span>
+        {% endif %}
+        <span class="badge badge-success">User : {{ post['email'] }}</span>
+        <hr>
+    {% endfor %}
+{% endblock %}
